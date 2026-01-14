@@ -7,12 +7,17 @@ browser automation.
 
 import os
 
+from dotenv import load_dotenv
+
 from config import SYSTEM_PROMPT
 from form_filling_node import FormFillingNode
 from google import genai
 
 from line import Bridge, CallRequest, VoiceAgentApp, VoiceAgentSystem
 from line.events import UserStartedSpeaking, UserStoppedSpeaking, UserTranscriptionReceived
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Target form URL - the actual web form to fill
 FORM_URL = "https://forms.fillout.com/t/rff6XZTSApus"
